@@ -51,6 +51,9 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=pedrovisk19&theme=tokyo-night&hide_border=true" />  
 </p>
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/pedrovisk19/pedrovisk19/output/github-contribution-grid-snake-dark.svg" alt="snake animation" />
+</p>
 
 <hr/>
 
