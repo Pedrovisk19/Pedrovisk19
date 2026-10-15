@@ -1,9 +1,9 @@
 <!-- ======================= HEADER ======================= -->
-<h1 align="center">Pedro Souza • Fullstack & AI Engineering</h1>
+<h1 align="center">Pedro Souza • Python & AI Engineering</h1>
 
 <p align="center">
-  <b>Python • FastAPI • LLM/RAG • PostgreSQL/pgvector • Next.js • NestJS • Docker</b><br/>
-  Construo do <b>banco</b> ao <b>pixel</b> — e o agente de IA que conversa com seu cliente enquanto você dorme.
+  <b>Python • FastAPI • LLM/agentes • RAG (pgvector) • PostgreSQL • Docker</b><br/>
+  Sistemas de IA que operam de verdade: do banco ao WhatsApp do cliente.
 </p>
 
 <p align="center">
@@ -25,39 +25,53 @@
 <hr/>
 
 <!-- ======================= STACK ICONS ======================= -->
-<h2 align="center">🧰 Tech Stack</h2>
+<h2 align="center">🧰 Stack (o que eu construo)</h2>
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=py,ts,js,nextjs,react,nodejs,nestjs,postgres,redis,docker,git,github,linux,nginx,vercel&perline=8" />
+  <img src="https://skillicons.dev/icons?i=py,postgres,redis,docker,git,github,linux,nginx,vercel&perline=9" />
+</p>
+
+<p align="center">
+  <b>FastAPI</b> · SQLAlchemy/asyncpg · Alembic · ARQ (fila) · pgvector (RAG híbrido) ·
+  LLMs (Groq ou qualquer API OpenAI-compatible) · engenharia de prompt ·
+  avaliação de respostas · Next.js (painel)
 </p>
 
 <hr/>
 
-<!-- ======================= A JORNADA ======================= -->
-<h2 align="center">🚀 A jornada — dos fundamentos ao agente de IA em produção</h2>
+<!-- ======================= PROJETOS ======================= -->
+<h2 align="center">🚀 Projetos em Python/IA</h2>
 
-<p align="center">Cada nível está representado por um projeto real no meu perfil — de baixo para cima:</p>
-
-| Nível | O que aprendi | Projetos |
+| Projeto | O que é | Destaques técnicos |
 |---|---|---|
-| 🔥 **5. IA em produção** | SaaS multi-tenant: RAG híbrido (pgvector), agentes com LLM, handoff humano, isolamento RLS, webhooks assinados, Docker | **[WAppAI](https://github.com/pedrovisk19/wappai)** — atendendo clientes reais via número comercial |
-| 🟣 **4. Python + IA aplicada** | Agentes de IA, memória persistente, automações diárias, segundo cérebro de dev | **[Developer Brain AI](https://github.com/pedrovisk19/linkedin-automation)** |
-| 🔵 **3. Fullstack TS** | NestJS + TypeORM + PostgreSQL + JWT; Next.js 14 com middleware de rotas | **[Auth backend](https://github.com/pedrovisk19/authenticator-backend)** · **[Auth frontend](https://github.com/pedrovisk19/authenticator-frontend)** · **[Scheduling SaaS](https://github.com/pedrovisk19/scheduling-api)** |
-| 🟠 **2. Conteúdo & open-source** | Desenhar trilhas de estudo e distribuir conhecimento | **[UGP — Universidade Gratuita do Programador](https://github.com/pedrovisk19/UGP)** |
-| 🟡 **1. Fundamentos** | Lógica, organização de código, primeiro contato com UI e APIs | [Shopee Cart](https://github.com/pedrovisk19/shoppee-cart) · [Mario Kart CLI](https://github.com/pedrovisk19/mario-kart-simulator) · [Apple Watch landing](https://github.com/pedrovisk19/apple-watch-landing-page) |
+| 🔥 **[WAppAI](https://github.com/pedrovisk19/wappai)** | SaaS multi-tenant de atendimento via WhatsApp com IA — **em produção com número comercial real** | RAG híbrido (pgvector + FTS + RRF), agentes com saída JSON validada + anti-alucinação, handoff humano (fila idempotente), RLS por tenant, credenciais criptografadas (Fernet), CI |
+| 🧠 **[Developer Brain AI](https://github.com/pedrovisk19/linkedin-automation)** | Segundo cérebro para devs: diário técnico, roadmap de estudos, agentes de IA (LinkedIn/GitHub/Planner/Carreira), RAG sobre a própria base, automações diárias | Python, agentes, memória persistente, integração de ferramentas |
 
 <details>
-<summary><b>Como o investimento em cada nível se acumulou</b></summary>
+<summary><b>Detalhes que mostram maturidade de engenharia</b></summary>
 
-O trajeto da fase 1 → 5 não foram projetos aleatórios: cada nível resolve uma
-lacuna do projeto anterior. No topo (WAppAI), os conceitos caíram em produção real:
-
-- **Fundamentos** → SQL/estrutura/código limpo → agora schema multi-tenant
-- **Fullstack** → JWT/sessões → agora refresh-token rotation + rate limit
-- **Python/IA** → RAG do segundo cérebro → agora busca híbrida pgvector + RRF
-- **Infra/DevOps** → Docker Compose → agora Nginx + TLS + backup automatizado
+- **Isolamento multi-tenant real**: Row-Level Security no PostgreSQL, provado por testes de cross-tenant (API e banco)
+- **RAG híbrido**: busca semântica (cosine/pgvector) × lexical (ts_rank) fundidas por **RRF** (reciprocal rank fusion); chunking por parágrafos; ingestão de PDF/DOCX/TXT/sites
+- **Anti-alucinação**: alegações sensíveis (preço/prazo/estoque) só têm resposta com base recuperada — sem base, resposta honesta + handoff
+- **Resiliência operacional**: idempotência de webhook, debounce agregando mensagens, flush pós-commit (bug de MVCC capturado com teste), rate limiter com fail-open audível
+- **Credenciais por conta criptografadas** (Fernet) + token System User permanente de WhatsApp — troca de token sem expor segredos
+- **Diário de bugs reais**: redis-py v5 (`redis.time()` retorna tupla), constraint + soft-delete, conversas amarradas à conta morta — tudo documentado
 
 </details>
+
+<hr/>
+
+<!-- ======================= HISTÓRICO ======================= -->
+<h2 align="center">📜 Histórico (exploração anterior — arquivado)</h2>
+
+<p align="center">
+  Antes do foco Python/IA, construí com TypeScript/JavaScript:
+  <b>NestJS + PostgreSQL</b> (JWT, agendamento SaaS), <b>Next.js 14</b> (auth + rotas
+  protegidas) e fundamentos (Node.js puro, HTML/CSS). Esses repos estão
+  <b>arquivados</b> — o foco daqui para frente é <b>100% Python/IA</b>. A base
+  fullstack segue a serviço: o painel do WAppAI é Next.js e os padrões de
+  banco/queries são os mesmos.
+</p>
 
 <hr/>
 
@@ -67,9 +81,17 @@ lacuna do projeto anterior. No topo (WAppAI), os conceitos caíram em produção
 <ul>
   <li><b>Clareza primeiro:</b> confirmo objetivo, critérios de aceite e casos de borda antes de codar.</li>
   <li><b>Simples e forte:</b> prefiro solução enxuta + bem testada do que complexa + frágil.</li>
-  <li><b>Full cycle:</b> penso em validação, logs, banco, performance prática e como isso vai rodar em produção.</li>
-  <li><b>Time-friendly:</b> PRs pequenos, commits com intenção e documentação objetiva.</li>
+  <li><b>Full cycle:</b> penso em validação, logs, banco, performance prática e produção — incluindo custo de LLM.</li>
+  <li><b>Time-friendly:</b> PRs pequenos, commits com intenção, docs objetivas. 93+ testes unitários em ~6s.</li>
 </ul>
+
+<h2 align="center">🎯 Próximos degraus (em progresso)</h2>
+
+<p align="center">
+  <b>Observabilidade/eval de agentes</b> · <b>RAG incremental</b> · <b>reranking</b> ·
+  <b>biblioteca de tools por domínio</b> — o roadmap está anotado no
+  <a href="https://github.com/pedrovisk19/wappai/blob/main/docs-public/STATUS.md"><b>STATUS do WAppAI</b></a>.
+</p>
 
 <hr/>
 
@@ -85,5 +107,5 @@ lacuna do projeto anterior. No topo (WAppAI), os conceitos caíram em produção
 <hr/>
 
 <p align="center">
-  <b>Se você curte código limpo, entrega consistente e evolução constante — vamos conversar.</b> 👊
+  <b>Python, IA aplicada e produtos que funcionam — vamos conversar.</b> 👊
 </p>
