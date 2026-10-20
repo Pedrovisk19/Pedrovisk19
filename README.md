@@ -2,7 +2,7 @@
 <h1 align="center">Pedro Souza • Python & AI Engineering</h1>
 
 <p align="center">
-  <b>Python • FastAPI • LLM/agentes • RAG (pgvector) • PostgreSQL • Docker</b><br/>
+  <b>Python • FastAPI • LLM/agentes • RAG • PostgreSQL • Docker</b><br/>
   Sistemas de IA que operam de verdade: do banco ao WhatsApp do cliente.
 </p>
 
